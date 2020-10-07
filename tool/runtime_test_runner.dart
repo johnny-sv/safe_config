@@ -40,8 +40,8 @@ Future main(List<String> args) async {
       "TEST_DB_ENV_VAR": "postgres://user:password@host:5432/dbname",
       "TEST_VALUE": "1"
     });
-    stdout.addStream(result.stdout);
-    stderr.addStream(result.stderr);
+    await stdout.addStream(result.stdout);
+    await stderr.addStream(result.stderr);
 
     if (await result.exitCode != 0) {
       exitCode = -1;

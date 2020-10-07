@@ -90,7 +90,7 @@ abstract class ConfigurationRuntime {
         ].expand((i) => i).toList();
         throw ConfigurationException(configuration, underlying.message,
           keyPath: keyPaths);
-      } else if (underlying is CastError) {
+      } else if (underlying is TypeError) {
         throw ConfigurationException(configuration, "input is wrong type",
           keyPath: [name]..addAll(e.keyPath));
       }
